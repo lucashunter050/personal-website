@@ -1,0 +1,35 @@
+{
+  // Configuration for Cloudflare Pages deployment with Next.js
+  "name": "personal-website",
+  "pages_build_output_dir": ".vercel/output/static",
+  "compatibility_date": "2024-12-01",
+  
+  // Environment variables for production
+  "vars": {
+    "NODE_ENV": "production"
+  },
+  
+  // KV namespaces (if needed for analytics or caching)
+  "kv_namespaces": [
+    // Uncomment if you need KV storage
+    // {
+    //   "binding": "ANALYTICS_KV",
+    //   "id": "your-kv-namespace-id",
+    //   "preview_id": "your-preview-kv-namespace-id"
+    // }
+  ],
+  
+  // Environment-specific overrides
+  "env": {
+    "production": {
+      "vars": {
+        "ENVIRONMENT": "production"
+      }
+    },
+    "preview": {
+      "vars": {
+        "ENVIRONMENT": "preview"
+      }
+    }
+  }
+}
