@@ -66,6 +66,14 @@ export default function Home() {
       expandedContent: "Built a comprehensive dining review platform with machine learning-powered recommendations. Implemented user preferences tracking, review sentiment analysis, and real-time menu updates. The project followed Agile development practices with sprint planning, daily standups, and continuous integration.",
       techStack: ["React", "JavaScript", "Agile", "Machine Learning", "Sentiment Analysis"],
       githubUrl: "#"
+    },
+    {
+      id: 'speedometer',
+      title: "Arduino Speedometer",
+      description: "",
+      expandedContent: "hey",
+      techStack: ["C", "Hardware", "Embedded Systems"],
+      githubUrl: "#"
     }
   ];
 
@@ -142,13 +150,13 @@ export default function Home() {
               <div className={styles.aboutText}>
                 <h3 className={styles.aboutHeading}>Hello! I&apos;m Lucas Hunter.</h3>
                 <p className={styles.paragraph}>
-                  I&apos;m a Computer Science student at USC (graduating May 2025) with a passion for mobile and backend development. 
-                  Currently working as the sole iOS developer at CurtainCall, where I&apos;ve quadrupled the codebase size and modernized the UI. 
+                  I studied Computer Science at USC (class of 2025) with a passion for mobile and embedded development. 
+                  I am currently working as the sole iOS developer at <a href="https://curtaincall.co/">CurtainCall</a>, where I&apos;ve quadrupled the codebase size and modernized the UI. 
                   I enjoy building scalable, user-friendly applications across different platforms.
                 </p>
                 <p className={styles.paragraph}>
                   When I&apos;m not coding, you can find me exploring new technologies, piloting small 
-                  airplanes, teaching computer science concepts, or working on personal projects that solve real-world problems.
+                  airplanes, teaching computer science concepts, or working on personal projects that solve problems in my life.
                 </p>
                 <div className={styles.skills}>
                   {["Swift", "SwiftUI", "React Native", "iOS", "Python", "C++", "JavaScript", "TypeScript", "Go", "SQL"].map((skill) => (
