@@ -75,6 +75,13 @@ export default function Home() {
       <nav className={styles.navbar}>
         <div className={styles.container}>
           <Link href="/" className={styles.logo}>
+            <Image
+              src="/android-chrome-512x512.png"
+              alt="Lucas Hunter Logo"
+              width={32}
+              height={32}
+              className={styles.logoImage}
+            />
             Lucas Hunter
           </Link>
           <div className={styles.navLinks}>

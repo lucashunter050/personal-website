@@ -34,13 +34,25 @@
 }
 
 .logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
   font-size: 1.25rem;
   font-weight: bold;
   transition: color 0.2s ease;
 }
 
+.logoImage {
+  border-radius: 0.25rem;
+  transition: transform 0.2s ease;
+}
+
 .logo:hover {
   color: var(--accent);
+}
+
+.logo:hover .logoImage {
+  transform: scale(1.05);
 }
 
 .navLinks {
