@@ -375,14 +375,54 @@
 
 .timelineIcon {
   flex-shrink: 0;
-  width: 3rem;
-  height: 3rem;
-  background: var(--accent);
+  width: 4.5rem;
+  height: 4.5rem;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
+  background: var(--card-bg);
+  border: 2px solid var(--border);
+  padding: 0.25rem;
+}
+
+.timelineIconImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* Specific styling for logos that need to fill more space */
+.timelineIcon img[src="/USC-Logo-Seal.png"],
+.timelineIcon img[src="/scopelogo.jpg"],
+.timelineIcon img[src="/gtown-disruptive-tech.svg"] {
+  width: 110%;
+  height: 110%;
+  object-fit: cover;
+}
+
+/* Keep USC Trojans logo at normal size to prevent cutoff */
+.timelineIcon img[src="/USC_Trojans_logo.svg.png"] {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Make Scope logo perfectly circular by cropping more aggressively */
+.timelineIcon img[src="/scopelogo.jpg"] {
+  width: 120%;
+  height: 120%;
+  object-fit: cover;
+  object-position: center;
+  margin: -10%;
+}
+
+/* Add white background for USC logos to ensure visibility in dark mode */
+.timelineIcon img[src="/USC-Logo-Seal.png"],
+.timelineIcon img[src="/USC_Trojans_logo.svg.png"] {
+  background: white;
+  padding: 0.1rem;
 }
 
 .timelineTitle {

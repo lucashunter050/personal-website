@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Github, Linkedin, Mail, Briefcase, GraduationCap } from "lucide-react";
+import { Github, Linkedin, Mail } from "lucide-react";
 import MobileNav from "../components/MobileNav";
 import ProjectsSection from "../components/ProjectsSection";
 import ThemeToggle from "../components/ThemeToggle";
@@ -69,9 +69,9 @@ export default function Home() {
     },
     {
       id: 'speedometer',
-      title: "Arduino Speedometer",
+      title: "Arduino Radar Gun",
       description: "",
-      expandedContent: "hey",
+      expandedContent: "Leveraged skills in C and embedded systems to build a speedgun from basic electronic components, including an ultrasonic rangefinder, breadboard, and Arduino Uno. Finished speedgun could accurately track speeds ranging from 0.1 to 50.0 m/s.",
       techStack: ["C", "Hardware", "Embedded Systems"],
       githubUrl: "#"
     }
@@ -150,8 +150,8 @@ export default function Home() {
               <div className={styles.aboutText}>
                 <h3 className={styles.aboutHeading}>Hello! I&apos;m Lucas Hunter.</h3>
                 <p className={styles.paragraph}>
-                  I studied Computer Science at USC (class of 2025) with a passion for mobile and embedded development. 
-                  I am currently working as the sole iOS developer at <a href="https://curtaincall.co/">CurtainCall</a>, where I&apos;ve quadrupled the codebase size and modernized the UI. 
+                  I studied Computer Science at USC (class of 2025) with a focus on mobile and embedded development. 
+                  I am currently working as the sole iOS developer at <a href="https://curtaincall.co/">CurtainCall</a>, where I have taken over and transformed the beta codebase to a modern, iOS 17+ compliant design. 
                   I enjoy building scalable, user-friendly applications across different platforms.
                 </p>
                 <p className={styles.paragraph}>
@@ -209,12 +209,18 @@ export default function Home() {
             {/* Current Role */}
             <div className={styles.timelineItem}>
               <div className={styles.timelineIcon}>
-                <Briefcase size={24} />
+                <Image
+                  src="/CurtainCallLogoNoLettersNoAlpha-iOS-Default-1024x1024@1x.png"
+                  alt="CurtainCall Logo"
+                  width={24}
+                  height={24}
+                  className={styles.timelineIconImage}
+                />
               </div>
               <div className={styles.timelineContent}>
                 <h3 className={styles.timelineTitle}>iOS Developer</h3>
                 <p className={styles.timelineCompany}>CurtainCall</p>
-                <p className={styles.timelinePeriod}>June 2024 - Present</p>
+                <p className={styles.timelinePeriod}>June 2025 - Present</p>
                 <p className={styles.timelineDescription}>
                   Sole iOS developer responsible for quadrupling the codebase size and modernizing the UI. 
                   Leading mobile development efforts and implementing new features for the startup&apos;s iOS application.
@@ -225,15 +231,44 @@ export default function Home() {
             {/* Teaching Assistant */}
             <div className={styles.timelineItem}>
               <div className={styles.timelineIcon}>
-                <GraduationCap size={24} />
+                <Image
+                  src="/USC-Logo-Seal.png"
+                  alt="USC Logo"
+                  width={24}
+                  height={24}
+                  className={styles.timelineIconImage}
+                />
               </div>
               <div className={styles.timelineContent}>
                 <h3 className={styles.timelineTitle}>Undergraduate Teaching Assistant</h3>
                 <p className={styles.timelineCompany}>USC Department of Computer Science</p>
-                <p className={styles.timelinePeriod}>August 2023 - Present</p>
+                <p className={styles.timelinePeriod}>August 2023 - May 2025</p>
                 <p className={styles.timelineDescription}>
-                  Hold weekly office hours for CSCI-270 (Algorithms), CSCI-360 (AI), and CSCI-353 (Internetworking). 
-                  Reinforce lecture content and assist students with homework and concept understanding.
+                  Held weekly office hours for CSCI-270 (Algorithms), CSCI-360 (AI), and CSCI-353 (Internetworking). 
+                  Reinforced lecture content and assisted students with homework and concept understanding.
+                </p>
+              </div>
+            </div>
+
+            {/* Scope */}
+            <div className={styles.timelineItem}>
+              <div className={styles.timelineIcon}>
+                <Image
+                  src="/scopelogo.jpg"
+                  alt="Scope Logo"
+                  width={24}
+                  height={24}
+                  className={styles.timelineIconImage}
+                />
+              </div>
+              <div className={styles.timelineContent}>
+                <h3 className={styles.timelineTitle}>Member</h3>
+                <p className={styles.timelineCompany}>Scope (USC Programming Club)</p>
+                <p className={styles.timelinePeriod}>September 2024 - May 2025</p>
+                <p className={styles.timelineDescription}>
+                  Active hackathon participant and team leader mentoring freshmen and sophomores in app development. 
+                  Led workshops and guided students through building applications using Next.js and React Native, 
+                  fostering collaborative learning and hands-on development experience.
                 </p>
               </div>
             </div>
@@ -241,7 +276,13 @@ export default function Home() {
             {/* iD Tech Camps */}
             <div className={styles.timelineItem}>
               <div className={styles.timelineIcon}>
-                <Briefcase size={24} />
+                <Image
+                  src="/id-tech-logo-2.jpg"
+                  alt="iD Tech Logo"
+                  width={24}
+                  height={24}
+                  className={styles.timelineIconImage}
+                />
               </div>
               <div className={styles.timelineContent}>
                 <h3 className={styles.timelineTitle}>Lead Instructor/Assistant Director</h3>
@@ -257,7 +298,13 @@ export default function Home() {
             {/* USC Rocket Lab */}
             <div className={styles.timelineItem}>
               <div className={styles.timelineIcon}>
-                <Briefcase size={24} />
+                <Image
+                  src="/usc-rpl.png"
+                  alt="USC RPL Logo"
+                  width={24}
+                  height={24}
+                  className={styles.timelineIconImage}
+                />
               </div>
               <div className={styles.timelineContent}>
                 <h3 className={styles.timelineTitle}>Launch Simulation Software Developer</h3>
@@ -273,7 +320,13 @@ export default function Home() {
             {/* Georgetown */}
             <div className={styles.timelineItem}>
               <div className={styles.timelineIcon}>
-                <Briefcase size={24} />
+                <Image
+                  src="/gtown-disruptive-tech.svg"
+                  alt="Georgetown Disruptive Technology Logo"
+                  width={24}
+                  height={24}
+                  className={styles.timelineIconImage}
+                />
               </div>
               <div className={styles.timelineContent}>
                 <h3 className={styles.timelineTitle}>Software Developer</h3>
@@ -289,7 +342,13 @@ export default function Home() {
             {/* Education */}
             <div className={styles.timelineItem}>
               <div className={styles.timelineIcon}>
-                <GraduationCap size={24} />
+                <Image
+                  src="/USC_Trojans_logo.svg.png"
+                  alt="USC Trojans Logo"
+                  width={24}
+                  height={24}
+                  className={styles.timelineIconImage}
+                />
               </div>
               <div className={styles.timelineContent}>
                 <h3 className={styles.timelineTitle}>Bachelor of Science in Computer Science</h3>
