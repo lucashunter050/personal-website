@@ -17,19 +17,5 @@
     //   "id": "your-kv-namespace-id",
     //   "preview_id": "your-preview-kv-namespace-id"
     // }
-  ],
-  
-  // Environment-specific overrides
-  "env": {
-    "production": {
-      "vars": {
-        "ENVIRONMENT": "production"
-      }
-    },
-    "preview": {
-      "vars": {
-        "ENVIRONMENT": "preview"
-      }
-    }
-  }
+  ]
 }
