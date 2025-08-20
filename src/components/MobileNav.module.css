@@ -13,8 +13,12 @@
   background: rgba(0, 0, 0, 0.1);
 }
 
+[data-theme="dark"] .menuButton:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
 @media (prefers-color-scheme: dark) {
-  .menuButton:hover {
+  :root:not([data-theme="light"]) .menuButton:hover {
     background: rgba(255, 255, 255, 0.1);
   }
 }
@@ -63,8 +67,12 @@
   background: rgba(0, 0, 0, 0.1);
 }
 
+[data-theme="dark"] .closeButton:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
 @media (prefers-color-scheme: dark) {
-  .closeButton:hover {
+  :root:not([data-theme="light"]) .closeButton:hover {
     background: rgba(255, 255, 255, 0.1);
   }
 }
@@ -86,4 +94,11 @@
 
 .navItem:hover {
   color: var(--accent);
+}
+
+.themeToggleContainer {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 1rem;
+  padding: 0.5rem 0;
 }

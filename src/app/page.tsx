@@ -1,9 +1,74 @@
 import Link from "next/link";
-import { Github, Linkedin, Mail, Code, User, Briefcase, GraduationCap } from "lucide-react";
+import Image from "next/image";
+import { Github, Linkedin, Mail, Briefcase, GraduationCap } from "lucide-react";
 import MobileNav from "../components/MobileNav";
+import ProjectsSection from "../components/ProjectsSection";
+import ThemeToggle from "../components/ThemeToggle";
 import styles from "./page.module.css";
 
 export default function Home() {
+  // Projects data
+  const projects = [
+    {
+      id: 'openhome',
+      title: "OpenHome.xyz Smart Speaker AI Agents",
+      description: "Leading AI agent development for voice-activated smart speakers, creating innovative solutions that interface with LLMs and IoT devices over MQTT for commercial smart home integration.",
+      expandedContent: "At OpenHome.xyz, I've created more AI abilities than all other developers combined, establishing myself as the lead contributor to our smart speaker platform. My work includes developing sophisticated voice AI systems for diverse applications from gaming strategy to aviation weather briefings. The platform integrates seamlessly with existing smart home ecosystems and leverages cutting-edge LLM technology to provide natural, intelligent responses.",
+      techStack: ["Python", "LLMs", "IoT", "MQTT", "Voice AI", "Smart Home"],
+      blogPosts: [
+        {
+          title: "AI Blackjack Strategy Trainer",
+          url: "https://openhome.com/blog/ai-blackjack-strategy-trainer"
+        },
+        {
+          title: "Aviation Weather Voice AI",
+          url: "https://openhome.com/blog/aviation-weather-voice-ai"
+        }
+      ],
+      isHighlighted: true
+    },
+    {
+      id: 'raytracer',
+      title: "C++ Ray Tracer with Global Illumination",
+      description: "Enhanced C++ ray tracer featuring global illumination, probabilistic light reflection, soft shadows, and anti-aliasing for photorealistic 3D rendering.",
+      expandedContent: "This project implements advanced computer graphics techniques including Monte Carlo path tracing, bidirectional reflectance distribution functions (BRDF), and importance sampling. The ray tracer supports complex material properties, area lights, and produces physically accurate lighting simulations.",
+      techStack: ["C++", "OpenGL", "Computer Graphics", "BRDF", "Monte Carlo"],
+      githubUrl: "#"
+    },
+    {
+      id: 'kvstore',
+      title: "Distributed Key-Value Store",
+      description: "Implemented distributed algorithms like Paxos in Go to create a fault-tolerant key-value store mimicking Google's Spanner, ensuring 100% consistency with any number of node failures.",
+      expandedContent: "Built from scratch using Go, this distributed system implements the Paxos consensus algorithm to maintain strong consistency across multiple nodes. The system handles network partitions, node failures, and concurrent operations while maintaining ACID properties. Features include automatic leader election, log replication, and client request routing.",
+      techStack: ["Go", "Paxos", "Distributed Systems", "Consensus Algorithms", "ACID"],
+      githubUrl: "#"
+    },
+    {
+      id: 'rocket',
+      title: "USC Rocket Propulsion Simulation",
+      description: "Developed C++ simulation software for USC RPL's Fireball rocket launch to 50km altitude. Refactored legacy code for improved performance and maintainability.",
+      expandedContent: "Led the software development for USC's rocket simulation system, optimizing aerodynamic calculations and propellant modeling. The refactoring effort reduced compilation time by 40% and improved code maintainability through better documentation and modular design. The simulation accurately predicted the rocket's trajectory to 50km altitude.",
+      techStack: ["C++", "Simulation", "Aerospace", "Physics Modeling", "Performance Optimization"],
+      githubUrl: "#"
+    },
+    {
+      id: 'promptshare',
+      title: "PromptShare Pro Mobile App",
+      description: "Designed and built a mobile app in Java using Firebase for users to share, like, and comment on effective AI prompt templates with Material Design components.",
+      expandedContent: "Full-stack mobile application featuring real-time synchronization, user authentication, and social features. Implemented Material Design principles for optimal user experience and integrated Firebase for backend services including real-time database, authentication, and cloud storage.",
+      techStack: ["Java", "Firebase", "Material Design", "Real-time Database", "Authentication"],
+      githubUrl: "#"
+    },
+    {
+      id: 'dineon',
+      title: "DineOn USC Dining Review App",
+      description: "Developed React front-end for USC dining hall review app with personalized recommendations. Followed Agile methodology with weekly feature planning and Git-based version control.",
+      expandedContent: "Built a comprehensive dining review platform with machine learning-powered recommendations. Implemented user preferences tracking, review sentiment analysis, and real-time menu updates. The project followed Agile development practices with sprint planning, daily standups, and continuous integration.",
+      techStack: ["React", "JavaScript", "Agile", "Machine Learning", "Sentiment Analysis"],
+      githubUrl: "#"
+    }
+  ];
+
   return (
     <div className={styles.portfolio}>
       {/* Navigation */}
@@ -17,6 +82,7 @@ export default function Home() {
             <Link href="#projects" className={styles.navLink}>Projects</Link>
             <Link href="#experience" className={styles.navLink}>Experience</Link>
             <Link href="#contact" className={styles.navLink}>Contact</Link>
+            <ThemeToggle />
           </div>
           <MobileNav />
         </div>
@@ -86,8 +152,15 @@ export default function Home() {
                 </div>
               </div>
               <div className={styles.aboutImage}>
-                <div className={styles.profilePlaceholder}>
-                  <User size={120} />
+                <div className={styles.profileImageContainer}>
+                  <Image
+                    src="/selfie-2.png"
+                    alt="Lucas Hunter"
+                    width={350}
+                    height={350}
+                    className={styles.profileImage}
+                    priority
+                  />
                 </div>
               </div>
             </div>
@@ -101,149 +174,10 @@ export default function Home() {
           <div className={styles.sectionHeader}>
             <h2 className={styles.sectionTitle}>My Projects</h2>
             <p className={styles.sectionSubtitle}>
-              Here are some of the projects I&apos;ve worked on
+              Here are some of the projects I&apos;ve worked on. Filter by technology to find projects relevant to your needs.
             </p>
           </div>
-          <div className={styles.projectsGrid}>
-            {/* Project 1 */}
-            <div className={styles.card}>
-              <div className={styles.cardIcon}>
-                <Code size={32} />
-              </div>
-              <h3 className={styles.cardTitle}>C++ Ray Tracer with Global Illumination</h3>
-              <p className={styles.cardDescription}>
-                Enhanced C++ ray tracer featuring global illumination, probabilistic light reflection, 
-                soft shadows, and anti-aliasing for photorealistic 3D rendering.
-              </p>
-              <div className={styles.techTags}>
-                <span className={styles.techTag}>C++</span>
-                <span className={styles.techTag}>OpenGL</span>
-                <span className={styles.techTag}>Computer Graphics</span>
-              </div>
-              <div className={styles.cardLinks}>
-                <a href="#" className={styles.cardLink}>
-                  <Github size={16} />
-                  Code
-                </a>
-              </div>
-            </div>
-
-            {/* Project 2 */}
-            <div className={styles.card}>
-              <div className={styles.cardIcon}>
-                <Code size={32} />
-              </div>
-              <h3 className={styles.cardTitle}>Distributed Key-Value Store</h3>
-              <p className={styles.cardDescription}>
-                Implemented distributed algorithms like Paxos in Go to create a fault-tolerant key-value store 
-                mimicking Google&apos;s Spanner, ensuring 100% consistency with any number of node failures.
-              </p>
-              <div className={styles.techTags}>
-                <span className={styles.techTag}>Go</span>
-                <span className={styles.techTag}>Paxos</span>
-                <span className={styles.techTag}>Distributed Systems</span>
-              </div>
-              <div className={styles.cardLinks}>
-                <a href="#" className={styles.cardLink}>
-                  <Github size={16} />
-                  Code
-                </a>
-              </div>
-            </div>
-
-            {/* Project 3 */}
-            <div className={styles.card}>
-              <div className={styles.cardIcon}>
-                <Code size={32} />
-              </div>
-              <h3 className={styles.cardTitle}>USC Rocket Propulsion Simulation</h3>
-              <p className={styles.cardDescription}>
-                Developed C++ simulation software for USC RPL&apos;s Fireball rocket launch to 50km altitude. 
-                Refactored legacy code for improved performance and maintainability.
-              </p>
-              <div className={styles.techTags}>
-                <span className={styles.techTag}>C++</span>
-                <span className={styles.techTag}>Simulation</span>
-                <span className={styles.techTag}>Aerospace</span>
-              </div>
-              <div className={styles.cardLinks}>
-                <a href="#" className={styles.cardLink}>
-                  <Github size={16} />
-                  Code
-                </a>
-              </div>
-            </div>
-
-            {/* Project 4 */}
-            <div className={styles.card}>
-              <div className={styles.cardIcon}>
-                <Code size={32} />
-              </div>
-              <h3 className={styles.cardTitle}>PromptShare Pro Mobile App</h3>
-              <p className={styles.cardDescription}>
-                Designed and built a mobile app in Java using Firebase for users to share, like, and comment 
-                on effective AI prompt templates with Material Design components.
-              </p>
-              <div className={styles.techTags}>
-                <span className={styles.techTag}>Java</span>
-                <span className={styles.techTag}>Firebase</span>
-                <span className={styles.techTag}>Material Design</span>
-              </div>
-              <div className={styles.cardLinks}>
-                <a href="#" className={styles.cardLink}>
-                  <Github size={16} />
-                  Code
-                </a>
-              </div>
-            </div>
-
-            {/* Project 5 */}
-            <div className={styles.card}>
-              <div className={styles.cardIcon}>
-                <Code size={32} />
-              </div>
-              <h3 className={styles.cardTitle}>DineOn USC Dining Review App</h3>
-              <p className={styles.cardDescription}>
-                Developed React front-end for USC dining hall review app with personalized recommendations. 
-                Followed Agile methodology with weekly feature planning and Git-based version control.
-              </p>
-              <div className={styles.techTags}>
-                <span className={styles.techTag}>React</span>
-                <span className={styles.techTag}>JavaScript</span>
-                <span className={styles.techTag}>Agile</span>
-              </div>
-              <div className={styles.cardLinks}>
-                <a href="#" className={styles.cardLink}>
-                  <Github size={16} />
-                  Code
-                </a>
-              </div>
-            </div>
-
-            {/* Project 6 */}
-            <div className={styles.card}>
-              <div className={styles.cardIcon}>
-                <Code size={32} />
-              </div>
-              <h3 className={styles.cardTitle}>Smart Speaker AI Agents</h3>
-              <p className={styles.cardDescription}>
-                Currently developing voice-activated smart speaker agents using Python, interfacing with LLMs 
-                and IoT devices over MQTT for commercial smart home integration.
-              </p>
-              <div className={styles.techTags}>
-                <span className={styles.techTag}>Python</span>
-                <span className={styles.techTag}>LLMs</span>
-                <span className={styles.techTag}>IoT</span>
-                <span className={styles.techTag}>MQTT</span>
-              </div>
-              <div className={styles.cardLinks}>
-                <a href="#" className={styles.cardLink}>
-                  <Github size={16} />
-                  Code
-                </a>
-              </div>
-            </div>
-          </div>
+          <ProjectsSection projects={projects} />
         </div>
       </section>
 

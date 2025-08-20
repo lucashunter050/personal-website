@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { Menu, X } from 'lucide-react';
+import ThemeToggle from './ThemeToggle';
 import styles from './MobileNav.module.css';
 
 export default function MobileNav() {
@@ -49,6 +50,9 @@ export default function MobileNav() {
                   {item.label}
                 </Link>
               ))}
+              <div className={styles.themeToggleContainer}>
+                <ThemeToggle />
+              </div>
             </nav>
           </div>
         </div>

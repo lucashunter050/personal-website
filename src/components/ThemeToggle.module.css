@@ -1,0 +1,82 @@
+.themeToggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 1px solid var(--border);
+  background: var(--background);
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.themeToggle:hover {
+  background: var(--card-bg);
+  border-color: var(--accent);
+  transform: scale(1.05);
+}
+
+.themeToggle:active {
+  transform: scale(0.95);
+}
+
+.iconContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+.icon {
+  color: var(--foreground);
+  transition: color 0.2s ease;
+}
+
+.themeToggle:hover .icon {
+  color: var(--accent);
+}
+
+/* Animation for theme switching */
+.themeToggle:active .iconContainer {
+  transform: rotate(180deg);
+}
+
+.placeholder {
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 1px solid transparent;
+}
+
+/* Light mode specific styles */
+[data-theme="light"] .themeToggle {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="light"] .themeToggle:hover {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+/* Dark mode specific styles */
+[data-theme="dark"] .themeToggle {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .themeToggle:hover {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .themeToggle {
+    width: 2.25rem;
+    height: 2.25rem;
+  }
+  
+  .icon {
+    width: 18px;
+    height: 18px;
+  }
+}
