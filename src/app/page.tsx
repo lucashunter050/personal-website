@@ -375,7 +375,7 @@ export default function Home() {
           </div>
           <div className={styles.contactContent}>
             <p className={styles.contactText}>
-              I&apos;m graduating in May 2025 and actively looking for full-time software engineering opportunities. 
+              I graduated in May 2025 and am actively looking for full-time software engineering opportunities. 
               Whether you have a question, want to discuss a potential role, or just want to say hi, feel free to reach out!
             </p>
             <div className={styles.contactButtons}>
