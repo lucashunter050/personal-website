@@ -70,10 +70,117 @@ export default function Home() {
     {
       id: 'speedometer',
       title: "Arduino Radar Gun",
-      description: "",
+      description: "Built a precision speed measurement device using Arduino Uno and ultrasonic sensors, capable of accurately tracking velocities from 0.1 to 50.0 m/s with embedded C programming.",
       expandedContent: "Leveraged skills in C and embedded systems to build a speedgun from basic electronic components, including an ultrasonic rangefinder, breadboard, and Arduino Uno. Finished speedgun could accurately track speeds ranging from 0.1 to 50.0 m/s.",
       techStack: ["C", "Hardware", "Embedded Systems"],
       githubUrl: "#"
+    }
+    ,
+    // --- Additional Resume-Relevant Projects ---
+    {
+      id: 'malloclab',
+      title: "MallocLab: Custom Memory Allocator",
+      description: "Implemented malloc, calloc, and free in C to achieve 95% of standard library performance and memory utilization.",
+      expandedContent: "Developed a custom dynamic memory allocator in C for CSCI 356, optimizing for speed and memory efficiency. Matched standard library performance within 5% margin, demonstrating deep understanding of low-level memory management.",
+      techStack: ["C", "Memory Management", "Systems Programming"],
+    },
+    {
+      id: 'cachelab',
+      title: "CacheLab: CPU Cache Simulator",
+      description: "Simulated the behavior of a CPU cache in C, analyzing hit/miss rates and optimizing memory access patterns.",
+      expandedContent: "Built a cache simulator for CSCI 356 to mimic real CPU cache operations. Analyzed and improved cache hit/miss rates, gaining hands-on experience with computer architecture and performance tuning.",
+      techStack: ["C", "Computer Architecture", "Performance"],
+    },
+    {
+      id: 'attacklab',
+      title: "AttackLab: Binary Exploitation",
+      description: "Used buffer overflows and return-oriented programming to exploit raw binaries and bypass security mechanisms.",
+      expandedContent: "Completed bomb lab and attack lab for CSCI 356, using buffer overflows and ROP to manipulate program control flow and defeat security protections. Gained practical experience in software security and vulnerability analysis.",
+      techStack: ["C", "Security", "Buffer Overflow", "ROP"],
+    },
+    {
+      id: 'shardedkv',
+      title: "Sharded Key-Value Store (Go)",
+      description: "Built a distributed, sharded key-value store using consistent hashing and Paxos for fault-tolerant transactions.",
+      expandedContent: "For CSCI 499, implemented a distributed key-value store in Go with sharding and Paxos-based consensus. Supported dynamic re-sharding and robust transaction handling across node clusters, simulating Google Spanner's architecture.",
+      techStack: ["Go", "Distributed Systems", "Paxos", "Sharding"],
+    },
+    {
+      id: 'cloudspanner',
+      title: "Cloud Spanner Simulation (Go)",
+      description: "Simulated Google Cloud Spanner using sharding and Paxos for distributed transactions and node clusters.",
+      expandedContent: "Developed a distributed database simulation in Go for CSCI 499, combining sharding and Paxos to model Google Spanner's approach to scalable, consistent transactions across multiple clusters.",
+      techStack: ["Go", "Distributed Systems", "Paxos", "Sharding", "Transactions"],
+    },
+    {
+      id: 'terrainmap',
+      title: "3D Terrain Map Renderer (C++)",
+      description: "Rendered 3D terrain from JPEG heightmaps using OpenGL, with real-time camera movement and lighting.",
+      expandedContent: "Created a 3D terrain visualization tool in C++ for CSCI 420, mapping grayscale JPEG images to heightmaps and rendering them with OpenGL. Implemented interactive camera controls and dynamic lighting for realistic visualization.",
+      techStack: ["C++", "OpenGL", "3D Graphics"],
+    },
+    {
+      id: 'rollercoaster',
+      title: "Roller Coaster Simulation (C++)",
+      description: "Simulated a 3D roller coaster ride with real-time rendering and Phong shading in OpenGL.",
+      expandedContent: "Built a real-time roller coaster simulation in C++ for CSCI 420, using OpenGL and the Phong lighting model. Designed track geometry and camera movement for an immersive 3D experience.",
+      techStack: ["C++", "OpenGL", "3D Graphics", "Simulation"],
+    },
+    {
+      id: 'webserver',
+      title: "Multithreaded Web Server (C++)",
+      description: "Developed a web server supporting concurrent connections and reliable data transfer protocols.",
+      expandedContent: "For CSCI 353, implemented a multithreaded web server in C++ with support for concurrent client connections and custom reliable data transfer. Practiced network programming and protocol design.",
+      techStack: ["C++", "Networking", "Multithreading"],
+    },
+    {
+      id: 'p2pnetwork',
+      title: "Peer-to-Peer Reliable Network (C++)",
+      description: "Created a P2P network of servers implementing a custom reliable data transfer protocol.",
+      expandedContent: "Built a peer-to-peer network in C++ for CSCI 353, implementing a custom protocol for reliable data transfer between nodes. Explored distributed networking and fault tolerance.",
+      techStack: ["C++", "Networking", "P2P", "Reliability"],
+    },
+    {
+      id: 'minesweeper',
+      title: "Minesweeper Android App",
+      description: "Developed a Minesweeper game for Android using Java and Firebase for real-time data storage.",
+      expandedContent: "For CSCI 310, built a fully functional Minesweeper app in Java with a Firebase backend. Implemented real-time game state storage and user authentication.",
+      techStack: ["Java", "Android", "Firebase"],
+    },
+    {
+      id: 'threadlib',
+      title: "Threading Library & MLFQ Scheduler (C)",
+      description: "Added a custom threading library and multi-level feedback queue scheduler to the xv6 kernel.",
+      expandedContent: "For CSCI 350, extended the xv6 operating system in C with a custom threading library and a multi-level feedback queue (MLFQ) scheduler. Improved process management and scheduling efficiency.",
+      techStack: ["C", "Operating Systems", "Threads", "Scheduling"],
+    },
+    {
+      id: 'impinterpreter',
+      title: "IMP Language Parser & Interpreter (OCaml)",
+      description: "Built a parser and interpreter for a simple imperative language using Menhir in OCaml.",
+      expandedContent: "For CSCI 431, implemented a parser and interpreter for the IMP language in OCaml using Menhir. Practiced functional programming and language design.",
+      techStack: ["OCaml", "Parsing", "Interpreters", "Functional Programming"],
+    },
+    {
+      id: 'calculator',
+      title: "Functional Calculator (OCaml)",
+      description: "Created a calculator in OCaml using functional programming techniques.",
+      expandedContent: "Developed a calculator in OCaml for CSCI 431, applying functional programming paradigms and parser combinators.",
+      techStack: ["OCaml", "Functional Programming"],
+    },
+    {
+      id: 'pathtracer',
+      title: "Path Tracer (C++)",
+      description: "Implemented a physically-based renderer in C++ for photorealistic image synthesis.",
+      expandedContent: "Built a path tracer in C++ as a personal project, simulating global illumination and realistic material interactions for high-quality image rendering.",
+      techStack: ["C++", "Rendering", "Path Tracing"],
+    },
+    {
+      id: 'travelplanner',
+      title: "AI Travel Planner (React Native)",
+      description: "Developed a React Native app using Gemini AI to help users plan personalized trips.",
+      expandedContent: "Created a travel planning app in React Native that leverages Gemini AI for itinerary generation and trip recommendations based on user preferences.",
+      techStack: ["React Native", "AI", "Travel", "Mobile"],
     }
   ];
 

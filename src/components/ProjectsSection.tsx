@@ -24,6 +24,7 @@ interface ProjectsSectionProps {
 export default function ProjectsSection({ projects }: ProjectsSectionProps) {
   const [selectedFilters, setSelectedFilters] = useState<string[]>([]);
   const [showAllSkills, setShowAllSkills] = useState(false);
+  const [showAllProjects, setShowAllProjects] = useState(false);
 
   // Get all unique skills from all projects
   const allSkills = useMemo(() => {
@@ -49,6 +50,9 @@ export default function ProjectsSection({ projects }: ProjectsSectionProps) {
       selectedFilters.some(filter => project.techStack.includes(filter))
     );
   }, [projects, selectedFilters]);
+
+  // Show only first 3 projects by default, show all if toggled
+  const displayedProjects = showAllProjects ? filteredProjects : filteredProjects.slice(0, 3);
 
   const toggleFilter = (skill: string) => {
     setSelectedFilters(prev =>
@@ -126,8 +130,8 @@ export default function ProjectsSection({ projects }: ProjectsSectionProps) {
 
       {/* Projects Grid */}
       <div className={styles.projectsGrid}>
-        {filteredProjects.length > 0 ? (
-          filteredProjects.map(project => (
+        {displayedProjects.length > 0 ? (
+          displayedProjects.map(project => (
             <ProjectCard
               key={project.id}
               title={project.title}
@@ -148,6 +152,18 @@ export default function ProjectsSection({ projects }: ProjectsSectionProps) {
           </div>
         )}
       </div>
+
+      {/* Show More / Show Less Button */}
+      {filteredProjects.length > 3 && (
+        <div className={styles.showMoreProjectsContainer}>
+          <button
+            className={styles.showMoreProjectsButton}
+            onClick={() => setShowAllProjects(v => !v)}
+          >
+            {showAllProjects ? 'Show Less' : `Show More (${filteredProjects.length - 3} more)`}
+          </button>
+        </div>
+      )}
     </div>
   );
 }
