@@ -4,6 +4,7 @@ import { Github, Linkedin, Mail } from "lucide-react";
 import MobileNav from "../components/MobileNav";
 import ProjectsSection from "../components/ProjectsSection";
 import ThemeToggle from "../components/ThemeToggle";
+import TypewriterText from "../components/TypewriterText";
 import styles from "./page.module.css";
 
 export default function Home() {
@@ -215,10 +216,14 @@ export default function Home() {
         <div className={styles.container}>
           <div className={styles.heroContent}>
             <h1 className={styles.heroTitle}>
-              Hi, I&apos;m Lucas Hunter
+              <TypewriterText 
+                text="Hi, I'm Lucas." 
+                speed={80} 
+                delay={300}
+              />
             </h1>
             <p className={styles.heroSubtitle}>
-              A passionate <span className={styles.accent}>Software Engineer</span> specializing in mobile and backend development, bringing innovative solutions to life through clean, efficient code.
+              A passionate <span className={styles.accent}>software developer</span> specializing in mobile development
             </p>
             <div className={styles.heroButtons}>
               <Link href="#projects" className={`${styles.btn} ${styles.btnPrimary}`}>
