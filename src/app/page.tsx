@@ -223,7 +223,7 @@ export default function Home() {
               />
             </h1>
             <p className={styles.heroSubtitle}>
-              A passionate <span className={styles.accent}>software developer</span> specializing in mobile development
+              A passionate <span className={styles.accent}>software engineer</span> specializing in web and mobile full stack development
             </p>
             <div className={styles.heroButtons}>
               <Link href="#projects" className={`${styles.btn} ${styles.btnPrimary}`}>
@@ -319,6 +319,29 @@ export default function Home() {
           </div>
           <div className={styles.timeline}>
             {/* Current Role */}
+            <div className={styles.timelineItem}>
+              <div className={styles.timelineIcon}>
+                <Image
+                  src="/pm-logo.jpg"
+                  alt="Property Matrix Logo"
+                  width={24}
+                  height={24}
+                  className={styles.timelineIconImage}
+                />
+              </div>
+              <div className={styles.timelineContent}>
+                <h3 className={styles.timelineTitle}>Full Stack Software Engineer</h3>
+                <p className={styles.timelineCompany}>Property Matrix</p>
+                <p className={styles.timelinePeriod}>September 2025 - Present</p>
+                <p className={styles.timelineDescription}>
+                  Developing full-stack web applications using Rails, React, Relay, TypeScript, and GraphQL. 
+                  Implementing automated testing with Selenium and deploying applications using Docker and Kubernetes 
+                  for scalable cloud infrastructure.
+                </p>
+              </div>
+            </div>
+
+            {/* Side Gig */}
             <div className={styles.timelineItem}>
               <div className={styles.timelineIcon}>
                 <Image

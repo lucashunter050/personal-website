@@ -83,9 +83,23 @@
   transition: background-color 0.2s ease;
 }
 
+/* Light theme (explicit) */
+[data-theme="light"] .techTag {
+  background: #e5e7eb;
+  color: #374151;
+}
+
+/* Dark theme (explicit) */
+[data-theme="dark"] .techTag {
+  background: #374151;
+  color: #d1d5db;
+}
+
+/* System preference fallback */
 @media (prefers-color-scheme: dark) {
-  .techTag {
+  :root:not([data-theme="light"]) .techTag {
     background: #374151;
+    color: #d1d5db;
   }
 }
 
