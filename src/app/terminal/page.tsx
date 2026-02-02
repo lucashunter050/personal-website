@@ -124,12 +124,6 @@ ProDex is an AI manufacturing optimization startup. We help factory
 operators make better decisions faster through real-time visibility
 into complex production systems.
 
-WHAT I BUILT
-  • Real-time production monitoring dashboards
-  • Component library for complex data visualization
-  • WebSocket architecture for live factory data streams
-  • Interfaces that feel immediate and intuitive
-
 TECH STACK
   React, TanStack, Zustand, Tailwind
 
@@ -625,9 +619,9 @@ export default function TerminalPage() {
 │                                                                              │
 │                          Welcome, visitor.                                   │
 │                                                                              │\x1b[0m
-\x1b[37m│\x1b[0m                            \x1b[32m▐▛███▜▌\x1b[0m                                           \x1b[37m│\x1b[0m
-\x1b[37m│\x1b[0m                           \x1b[32m▝▜█████▛▘\x1b[0m                                          \x1b[37m│\x1b[0m
-\x1b[37m│\x1b[0m                             \x1b[32m▘▘ ▝▝\x1b[0m                                            \x1b[37m│\x1b[0m
+\x1b[37m│\x1b[0m                            \x1b[33m▐▛███▜▌\x1b[0m                                           \x1b[37m│\x1b[0m
+\x1b[37m│\x1b[0m                           \x1b[33m▝▜█████▛▘\x1b[0m                                          \x1b[37m│\x1b[0m
+\x1b[37m│\x1b[0m                             \x1b[33m▘▘ ▝▝\x1b[0m                                            \x1b[37m│\x1b[0m
 \x1b[37m│                                                                              │
 │                      guest@lucas-hunter.com                                  │
 │                   ~/terminal (read-only session)                             │
@@ -753,6 +747,7 @@ export default function TerminalPage() {
       if (i % 2 === 1) {
         const code = parts[i];
         if (code === "32") colorClass = "text-highlight";
+        else if (code === "33") colorClass = "text-[#CA7C5E]";
         else if (code === "37") colorClass = "text-white";
         else if (code === "90") colorClass = "text-gray-500";
         else if (code === "0") colorClass = "";
