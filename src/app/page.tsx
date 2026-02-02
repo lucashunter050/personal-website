@@ -233,7 +233,7 @@ export default function Home() {
           </p>
           <div className="mt-6 flex items-center gap-8 text-sm tracking-wider-custom text-text uppercase">
             <span>Last Seen: {location}</span>
-            <span>// NYC</span>
+            <span>{'// NYC'}</span>
           </div>
           <p
             onClick={openTerminal}
