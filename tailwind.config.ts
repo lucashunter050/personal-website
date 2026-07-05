@@ -32,7 +32,7 @@ const config: Config = {
       },
       fontFamily: {
         display: ['"Archivo Variable"', "system-ui", "sans-serif"],
-        sans: ['"Uncut Sans"', "system-ui", "sans-serif"],
+        sans: ["var(--font-raleway)", "system-ui", "sans-serif"],
         mono: ['"JetBrains Mono"', "ui-monospace", "monospace"],
       },
       fontSize: {

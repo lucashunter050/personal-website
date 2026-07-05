@@ -1,7 +1,13 @@
 import type { Metadata } from "next";
+import { Raleway } from "next/font/google";
 import "@fontsource-variable/archivo/wdth.css";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
+
+const raleway = Raleway({
+  variable: "--font-raleway",
+  subsets: ["latin"],
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://lucas-hunter.com"),
@@ -29,7 +35,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning className={raleway.variable}>
       <body>
         <ThemeProvider>{children}</ThemeProvider>
       </body>

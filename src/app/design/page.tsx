@@ -63,7 +63,7 @@ export default function DesignPage() {
             </div>
           </div>
           <div>
-            <MonoLabel>body / Uncut Sans</MonoLabel>
+            <MonoLabel>body / Raleway</MonoLabel>
             <p className="mt-1 max-w-lg text-sm leading-relaxed">
               End-to-end systems from infrastructure to interface. Scalable, observable,
               production-ready — with pixel-level care where people touch it.
@@ -97,9 +97,8 @@ export default function DesignPage() {
         <div className="flex flex-wrap items-center gap-3">
           <Badge>React</Badge>
           <Badge variant="outline">TypeScript</Badge>
+          <Badge variant="outline">TanStack</Badge>
           <Badge variant="solid">New</Badge>
-          <Badge variant="mono">TanStack</Badge>
-          <Badge variant="mono">Zustand</Badge>
           <StatusPill>Status: Online</StatusPill>
           <StatusPill variant="outline">Deploy ready</StatusPill>
           <StatusPill variant="bare" live={false}>
