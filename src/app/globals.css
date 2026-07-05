@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ---------- Self-hosted fonts (Archivo Variable comes via fontsource import in layout.tsx) ---------- */
+
 @font-face {
   font-family: "JetBrains Mono";
   src: url("/fonts/webfonts/JetBrainsMono-Regular.woff2") format("woff2");
@@ -50,23 +52,65 @@
   font-display: swap;
 }
 
+/* ---------- Design tokens ---------- */
+
 @layer base {
-  html,
-  body {
-    background-color: #000000;
-    color: #FFFFFF;
-    font-family: "Uncut Sans", system-ui, sans-serif;
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 9%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 9%;
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 42%;
+    --border: 0 0% 88%;
+    --input: 0 0% 88%;
+    --primary: 0 0% 9%;
+    --primary-foreground: 0 0% 100%;
+    --ring: 0 0% 9%;
+    --status: 142 65% 38%;
+    --radius: 0.75rem;
   }
 
-  ::selection {
-    background-color: #BFFF00;
-    color: #000000;
+  .dark {
+    --background: 0 0% 7%;
+    --foreground: 0 0% 96%;
+    --card: 0 0% 9%;
+    --card-foreground: 0 0% 96%;
+    --muted: 0 0% 13%;
+    --muted-foreground: 0 0% 62%;
+    --border: 0 0% 17%;
+    --input: 0 0% 17%;
+    --primary: 0 0% 96%;
+    --primary-foreground: 0 0% 9%;
+    --ring: 0 0% 96%;
+    --status: 142 55% 48%;
   }
 
   html {
     scroll-behavior: smooth;
   }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  ::selection {
+    background-color: hsl(var(--foreground));
+    color: hsl(var(--background));
+  }
 }
+
+@layer utilities {
+  /* Condensed cut of Archivo Variable — pair with font-display */
+  .stretch-condensed {
+    font-stretch: 68%;
+  }
+  .stretch-semi {
+    font-stretch: 84%;
+  }
+}
+
+/* ---------- Legacy terminal styles (removed with /terminal in Phase 6) ---------- */
 
 @keyframes terminal-line-in {
   from {
