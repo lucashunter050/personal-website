@@ -46,7 +46,7 @@ function CompassTape({ className, heading = 0, spread = 60, ...props }: CompassT
       {...props}
     >
       {/* center caret */}
-      <div className="absolute left-1/2 top-0 -translate-x-1/2 text-foreground">▾</div>
+      <div className="absolute left-1/2 top-0 -translate-x-1/2">▾</div>
       {ticks.map(({ deg, pct }) => {
         const major = deg % 15 === 0;
         return (
@@ -56,7 +56,7 @@ function CompassTape({ className, heading = 0, spread = 60, ...props }: CompassT
             style={{ left: `${pct}%` }}
           >
             {major && <span>{headingLabel(deg)}</span>}
-            <span className={cn("w-px bg-border", major ? "h-2.5" : "h-1.5")} />
+            <span className={cn("w-px bg-current opacity-60", major ? "h-2.5" : "h-1.5")} />
           </div>
         );
       })}
