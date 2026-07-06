@@ -85,7 +85,7 @@ export default function DesignPage() {
           </Button>
           <Button variant="outline">View on GitHub</Button>
           <Button variant="ghost">Ghost</Button>
-          <Button variant="hud" size="lg">
+          <Button variant="hud" size="lg" className="h-11 px-5">
             <Crosshair size={16} /> Click to start flight sim <ArrowRight />
           </Button>
           <Button disabled>Disabled</Button>
@@ -95,10 +95,10 @@ export default function DesignPage() {
 
       <Section title="Badges & pills">
         <div className="flex flex-wrap items-center gap-3">
-          <Badge>React</Badge>
+          <Badge variant="secondary">React</Badge>
           <Badge variant="outline">TypeScript</Badge>
           <Badge variant="outline">TanStack</Badge>
-          <Badge variant="solid">New</Badge>
+          <Badge>New</Badge>
           <StatusPill>Status: Online</StatusPill>
           <StatusPill variant="outline">Deploy ready</StatusPill>
           <StatusPill variant="bare" live={false}>
