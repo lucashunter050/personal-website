@@ -122,7 +122,8 @@ export function World({ controls }: { controls: React.RefObject<ControlsRef> }) 
       <hemisphereLight args={["#bdd7f0", "#ffffff", 0.75]} />
       <directionalLight position={[4000, 1200, -1500]} intensity={2.1} color="#fff3e0" />
 
-      <Clouds ref={cloudField} material={THREE.MeshLambertMaterial} limit={600}>
+      {/* texture self-hosted — drei's default points at a third-party CDN */}
+      <Clouds ref={cloudField} texture="/textures/cloud.png" material={THREE.MeshLambertMaterial} limit={600}>
         {puffs.map((p) => (
           <Cloud
             key={p.seed}
