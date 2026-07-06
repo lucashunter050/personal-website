@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import { cn } from "@/lib/utils";
+import { useActiveSection } from "@/lib/use-active-section";
 
 export interface AltitudeSection {
   /** DOM id of the section element to observe */
@@ -21,24 +22,8 @@ interface AltitudeRailProps {
  * IntersectionObserver. Scrolling the page = climbing through altitudes.
  */
 function AltitudeRail({ sections, className }: AltitudeRailProps) {
-  const [activeId, setActiveId] = React.useState(sections[0]?.id);
-
-  React.useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        for (const entry of entries) {
-          if (entry.isIntersecting) setActiveId(entry.target.id);
-        }
-      },
-      // Fire when a section crosses the upper-middle band of the viewport
-      { rootMargin: "-40% 0px -55% 0px" }
-    );
-    for (const s of sections) {
-      const el = document.getElementById(s.id);
-      if (el) observer.observe(el);
-    }
-    return () => observer.disconnect();
-  }, [sections]);
+  const ids = React.useMemo(() => sections.map((s) => s.id), [sections]);
+  const activeId = useActiveSection(ids);
 
   return (
     <nav

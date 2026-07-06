@@ -55,16 +55,19 @@ export function Hero() {
     target: ref,
     offset: ["start start", "end start"],
   });
-  const skyY = useTransform(scrollYProgress, [0, 1], ["0%", reducedMotion ? "0%" : "14%"]);
+  const skyY = useTransform(scrollYProgress, [0, 1], ["0%", reducedMotion ? "0%" : "8%"]);
   const contentOpacity = useTransform(scrollYProgress, [0, 0.55], [1, 0]);
 
   return (
     <section
       ref={ref}
+      id="boot"
       className="relative h-svh min-h-[600px] overflow-hidden bg-[#101722] text-white"
     >
       {/* Sky plates — light/dark, landscape/portrait */}
-      <motion.div style={{ y: skyY }} className="absolute -inset-y-[7%] inset-x-0">
+      <motion.div
+        style={{ y: skyY, position: "absolute", top: "-8%", bottom: "-8%", left: 0, right: 0 }}
+      >
         <img
           src="/backgrounds/sky-hero-sunset.jpg"
           alt=""
