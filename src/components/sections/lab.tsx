@@ -27,9 +27,9 @@ export function Lab() {
           {projects.map((project) => (
             <Card key={project.title} className="flex flex-col">
               <CardHeader>
-                {project.status === "offline" ? (
-                  <StatusPill variant="bare" live={false} className="mb-1">
-                    Sim module offline
+                {project.status ? (
+                  <StatusPill variant="bare" live={project.status === "live"} className="mb-1">
+                    {project.status === "live" ? "Sim online" : "Sim module offline"}
                   </StatusPill>
                 ) : (
                   project.dates && <MonoLabel className="mb-1">{project.dates}</MonoLabel>
@@ -57,6 +57,14 @@ export function Lab() {
                   <Button variant="hud" disabled className="mt-1 w-fit">
                     <Crosshair size={14} /> Boot sequence pending
                   </Button>
+                )}
+                {project.status === "live" && project.link && (
+                  <a
+                    href={project.link}
+                    className={cn(buttonVariants({ variant: "hud" }), "mt-1 w-fit")}
+                  >
+                    <Crosshair size={14} /> Launch sim
+                  </a>
                 )}
               </CardContent>
             </Card>

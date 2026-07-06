@@ -1,18 +1,18 @@
-'use client';
+"use client";
 
-import dynamic from 'next/dynamic';
+import dynamic from "next/dynamic";
 
-const InstrumentPanel = dynamic(() => import('./InstrumentPanel'), {
+const FlightSim = dynamic(() => import("@/components/sim/flight-sim"), {
   ssr: false,
   loading: () => (
-    <div className="min-h-screen bg-[#0a0a0a] flex items-center justify-center">
-      <div className="text-[#BFFF00] font-sans text-sm tracking-wider">
-        INITIALIZING INSTRUMENTS...
-      </div>
+    <div className="fixed inset-0 flex items-center justify-center bg-[#101722]">
+      <span className="animate-pulse font-mono text-label-lg uppercase text-white/70">
+        Initializing flight systems…
+      </span>
     </div>
   ),
 });
 
 export default function FlightSimPage() {
-  return <InstrumentPanel />;
+  return <FlightSim />;
 }

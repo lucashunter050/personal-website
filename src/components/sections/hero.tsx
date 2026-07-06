@@ -7,11 +7,13 @@ import {
   useScroll,
   useTransform,
 } from "motion/react";
+import Link from "next/link";
 import { ArrowDown } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 import { CompassTape } from "@/components/hud/compass-tape";
 import { Crosshair } from "@/components/hud/crosshair";
 import { profile } from "@/content/profile";
+import { cn } from "@/lib/utils";
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
@@ -155,18 +157,15 @@ export function Hero() {
           >
             Enter portfolio <ArrowDown />
           </Button>
-          <Button
-            variant="hud"
-            size="lg"
-            disabled
-            className="h-11 border-white/40 px-5 text-white/80"
-            title="Simulator module offline — rebuild in progress"
+          <Link
+            href="/flight-sim"
+            className={cn(
+              buttonVariants({ variant: "hud", size: "lg" }),
+              "h-11 border-white/40 px-5 text-white/85 hover:bg-white/10 hover:text-white"
+            )}
           >
             <Crosshair size={15} /> Start flight sim
-          </Button>
-          <span className="basis-full font-mono text-label uppercase text-white/50">
-            Sim module offline
-          </span>
+          </Link>
         </motion.div>
       </motion.div>
 

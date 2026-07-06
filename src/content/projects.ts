@@ -12,10 +12,14 @@ export const projects: Project[] = [
   {
     title: "Flight Simulator",
     description:
-      "A browser-based flight simulator that boots straight from this site's cockpit. The original build flew; the rebuild will be the real thing.",
-    highlights: ["Full rewrite in progress — boot sequence pending"],
-    tech: ["Canvas API", "requestAnimationFrame", "3D math"],
-    status: "offline",
+      "Real-time WebGL flight over an endless cloudscape, booted straight from this site's cockpit.",
+    highlights: [
+      "Honest flight model: bank-driven coordinated turns, energy trades, stall behavior",
+      "DOM HUD driven from the render loop via zustand",
+    ],
+    tech: ["Three.js", "React Three Fiber", "zustand"],
+    status: "live",
+    link: "/flight-sim",
   },
   {
     title: "OpenHome.xyz Capstone",
